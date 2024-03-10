@@ -2,52 +2,87 @@ import React from 'react';
 
 function App() {
 
-  const h1Style = {
-    width: '800px'
+  const password_toggle = {
+    position: 'relative'
   };
 
   return (
     <>
-    <div className="accordion" id="accordionExample" style={h1Style}>
-  <div className="accordion-item">
-    <h2 className="accordion-header">
-      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Accordion Item #1
-      </button>
-    </h2>
-    <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-      <div className="accordion-body">
-        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      <div className="container">
+        <h2 className="text-center mb-4">Login</h2>
+        <div className="row">
+          <div className="col-md-6 offset-md-3">
+            <form>
+              <div className="form-outline mb-4">
+                <label className="form-label" for="loginEmail">
+                  Email address
+                </label>
+                <input type="email" id="loginEmail" className="form-control" />
+              </div>
+
+              <div className="form-outline mb-4">
+                <div className="password-toggle" style={password_toggle}>
+                  <label className="form-label" for="loginPassword">
+                    Password
+                  </label>
+                  <div className="input-group">
+                    <input
+                      type="password"
+                      id="loginPassword"
+                      className="form-control"
+                    />
+                    <button
+                      id="togglePassword"
+                      className="input-group-text"
+                      type="button" 
+                    >
+                      <i className="fa fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="row mb-4">
+                <div className="col d-flex justify-content-center">
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="loginCheck"
+                      checked
+                      aria-describedby="loginCheckHelpText"
+                    />
+                    <button
+                      id="forgotPassword"
+                      className="btn btn-link btn-floating mx-1"
+                      type="button"
+                    >
+                      Forgot password?
+                    </button>
+                    <label className="form-check-label" for="loginCheck">
+                      Remember me
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" className="btn btn-primary btn-block">
+                Login
+              </button>
+
+              <p className="text-center mt-4">
+                Don't have an account?{" "}
+                <a href="#signup" className="text-decoration-none">
+                  Register here
+                </a>
+              </p>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div className="accordion-item">
-    <h2 className="accordion-header">
-      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
-      <div className="accordion-body">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div className="accordion-item">
-    <h2 className="accordion-header">
-      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
-      <div className="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-</div>
     </>
-  )
+  );
 }
 
 export default App
