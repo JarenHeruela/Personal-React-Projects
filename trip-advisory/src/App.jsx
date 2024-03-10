@@ -4,7 +4,6 @@ function App() {
 
   const h1Style = {
     width: '800px'
-    
   };
 
   return (
